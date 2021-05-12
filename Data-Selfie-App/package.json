@@ -1,0 +1,14 @@
+{
+  "name": "geo_app",
+  "version": "1.0.0",
+  "description": "\"app qith geolocation web api\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sachin Bhusal",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

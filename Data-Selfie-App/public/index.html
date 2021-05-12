@@ -1,0 +1,74 @@
+<!DOCTYPE >
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <style>
+      .click-btn {
+        width: auto;
+        background-color: green;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border-radius: 10px;
+        padding: 5px 10px;
+        transition-duration: 200ms;
+        box-shadow: 5px 5px 5px 10px rgba(110, 110, 110, 0.6);
+        outline: none;
+        border: none;
+      }
+      .click-btn:hover {
+        transform: scale(1.1);
+      }
+      #map {
+        height: 600px;
+        margin: 20px 0;
+      }
+      .input {
+        margin: 40px 0px;
+        display: none;
+      }
+      .input > input {
+        outline: none;
+        border-radius: 8px;
+        padding: 6px;
+        box-shadow: 5px 5px 5px rgba(100, 100, 100, 0.6);
+        font-size: 20px;
+        border: none;
+      }
+      .input > label {
+        font-size: 20px;
+      }
+    </style>
+    <title>GEOLOCATION</title>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <button id="locate" class="click-btn" onclick="show_my_pos()">
+      Locate my Location
+    </button>
+    <div id="map"></div>
+    <button id="submit" class="click-btn">Submit my Location</button>
+    <div class="input">
+      <label for="input">Submitted By: </label>
+      <input id="name" type="text" value="" placeholder="Your name?" />
+      <input
+        id="final-submit"
+        type="submit"
+        value="Are you sure?"
+        style="cursor: pointer"
+      />
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
