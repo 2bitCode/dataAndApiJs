@@ -27,7 +27,7 @@ async function getISSData() {
 
   console.log(latitude, longitude);
 
-  marker.setLatLng([latitud2e, longitude]);
+  marker.setLatLng([latitude, longitude]);
   map.setView([latitude, longitude], 3);
 
   document.getElementById("lat").textContent = latitude.toFixed(2);

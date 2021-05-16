@@ -1,5 +1,3 @@
-// const { json } = require("express");
-
 // Creating maps and tiles using Leaflet.js library
 const map = L.map("map").setView([0, 0], 3);
 
@@ -20,6 +18,26 @@ if ("geolocation" in navigator) {
     (location) => {
       pos.latitude = location.coords.latitude;
       pos.longitude = location.coords.longitude;
+      const lat = pos.latitude;
+      const lon = pos.longitude;
+      const data = { lat, lon };
+
+      // handling submit location to send
+      // latitude, longitude to the server we created
+      document.getElementById("submit").addEventListener("click", async (e) => {
+        e.preventDefault();
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        };
+        console.log(JSON.stringify(data));
+        const response = await fetch("http://localhost:3000/api", options);
+        const json = await response.json();
+        console.log(json);
+      });
     },
     (err) => console.log(err.message)
   );
@@ -28,35 +46,8 @@ if ("geolocation" in navigator) {
 }
 
 //showing user's current location on the map
-function show_my_pos() {
+document.getElementById("locate").addEventListener("click", (e) => {
+  e.preventDefault();
   marker.setLatLng([pos.latitude, pos.longitude]);
   map.setView([pos.latitude, pos.longitude], 10);
-}
-
-// handling submit location to send
-// latitude, longitude to the server we created
-const input_field = document.querySelector(".input");
-const submit_button = document.getElementById("submit");
-const final_submit_button = document.getElementById("final-submit");
-const nameField = document.getElementById("name");
-
-submit_button.addEventListener("click", (e) => {
-  e.preventDefault();
-  input_field.style.display = "flex";
-});
-
-final_submit_button.addEventListener("click", (e) => {
-  e.preventDefault();
-  const options = {
-    method: "POST",
-    header: {
-      "Content-Type": "application/json",
-    },
-    body: pos,
-  };
-  nameField.value = null;
-  console.log(pos);
-  fetch("/api", options);
-
-  // console.log(jsonRes);
 });
