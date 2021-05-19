@@ -1,0 +1,35 @@
+<!DOCTYPE >
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      .link  a{ 
+        font-size: 1.1rem;
+        text-decoration: none;
+        color: black;
+      }
+      .link > #a-list { 
+          border-bottom: 2px solid red;
+          text-shadow: 1px 1px 1px black;
+      }
+      .container { 
+        margin-top: 1.6em;
+      }
+      .container > div:nth-child(3n+1) { 
+        margin-top: 1em;
+      }
+      .container > div:nth-child(n) { 
+        font-size: 1.2rem;
+      }
+    </style>
+    <title>GEOLOCATION</title>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <div class="link">
+      <a id="a-submit" href="/">Submit</a> | <a id="a-list" href="/list">List</a
+    </div> </br>
+    <div class="container"></div>
+    <script src="list.js"></script>
+  </body>
+</html>

@@ -26,6 +26,7 @@
         box-shadow: 5px 5px 5px 10px rgba(110, 110, 110, 0.6);
         outline: none;
         border: none;
+        margin-top: 2em;
       }
       .click-btn:hover {
         transform: scale(1.1);
@@ -49,11 +50,23 @@
       .input > label {
         font-size: 20px;
       }
+      .link  a{ 
+        font-size: 1.1rem;
+        text-decoration: none;
+        color: black;
+      }
+      .link > #a-submit { 
+        border-bottom: 2px solid red;
+          text-shadow: 1px 1px 1px black;
+      }
     </style>
     <title>GEOLOCATION</title>
   </head>
   <body>
     <h1>Welcome</h1>
+    <div class="link">
+      <a id="a-submit" href="/">Submit</a> | <a id="a-list" href="/list">List</a
+    </div> </br>
     <button id="locate" class="click-btn">Locate my Location</button>
     <div id="map"></div>
     <button id="submit" class="click-btn">Submit my Location</button>
