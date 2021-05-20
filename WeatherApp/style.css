@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+}
+
+h1 {
+  text-shadow: 2px 2px 2px lightblue;
+  font-size: 3rem;
+}
+
+.container {
+  border: 5px solid black;
+  border-radius: 0.5em;
+  padding: 2em;
+  font-size: 1.5rem;
+  background-color: hsl(111, 68%, 6%);
+  color: white;
+  min-height: 1vw;
+  width: 60%;
+  box-shadow: 10px 10px 10px white;
+}
+
+.container :nth-child(n) {
+  padding: 0.5em;
+}
