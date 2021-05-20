@@ -3,7 +3,6 @@ getData().catch((err) => console.log(err.message));
 async function getData() {
   const response = await fetch("http://localhost:3000/api");
   const data = await response.json();
-  console.log(data);
 
   for (item of data) {
     const root = document.querySelector(".container");
